@@ -1,0 +1,9 @@
+.counter .number {
+  margin: auto 10px;
+  width: 50px;
+  display: inline-block;
+}
+
+.counter .button {
+  font-size: 30px;
+}
