@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import "./Counter.css";
+import { COUNTER_INIT_VALUE } from "../constants/constants";
 
 class Counter extends Component {
   constructor(props) {
     super(props);
+
     this.onIncrease = this.onIncrease.bind(this);
     this.onDecrease = this.onDecrease.bind(this);
 
     this.state = {
-      number: 0,
+      number: COUNTER_INIT_VALUE,
     };
   }
 

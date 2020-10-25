@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Counter from "./Counter";
+import { COUNTER_GROUP_INIT_SIZE } from "../constants/constants";
 
 class CounterGroup extends Component {
   initArray(size) {
-    return Array.from(Array(size).keys());
+    const number = size.length > 0 ? parseInt(size) : COUNTER_GROUP_INIT_SIZE;
+    return Array.from(Array(number).keys());
   }
 
   render() {
