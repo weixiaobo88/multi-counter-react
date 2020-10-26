@@ -15,8 +15,8 @@ class CounterGroup extends Component {
 
     return (
       <div>
-        {counterSizeArray.map((index) => (
-          <Counter key={index} />
+        {counterSizeArray.map((value) => (
+          <Counter key={value} />
         ))}
       </div>
     );
