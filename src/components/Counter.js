@@ -14,12 +14,24 @@ class Counter extends Component {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.size !== this.props.size) {
+      this.setState({ number: COUNTER_INIT_VALUE });
+    }
+  }
+
   onIncrease() {
-    this.setState((prevState) => ({ number: prevState.number + 1 }));
+    this.setState(
+      (prevState) => ({ number: prevState.number + 1 }),
+      () => this.props.onUpdate(1)
+    );
   }
 
   onDecrease() {
-    this.setState((prevState) => ({ number: prevState.number - 1 }));
+    this.setState(
+      (prevState) => ({ number: prevState.number - 1 }),
+      () => this.props.onUpdate(-1)
+    );
   }
 
   render() {

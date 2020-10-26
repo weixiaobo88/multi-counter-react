@@ -10,13 +10,13 @@ class CounterGroup extends Component {
 
   render() {
     // const size = this.props.size;
-    const { size } = this.props;
+    const { size, onUpdate } = this.props;
     const counterSizeArray = this.initArray(size);
 
     return (
       <div>
         {counterSizeArray.map((value) => (
-          <Counter key={value} />
+          <Counter key={value} size={size} onUpdate={onUpdate} />
         ))}
       </div>
     );
