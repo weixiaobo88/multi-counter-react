@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Counter.css";
 import {
   COUNTER_INIT_VALUE,
-  COUNTER_INCREMENT_VALUE,
   COUNTER_DECREMENT_VALUE,
 } from "../constants/constants";
 
@@ -25,17 +24,17 @@ class Counter extends Component {
   }
 
   onIncrease() {
-    this.setState(
-      (prevState) => ({ number: prevState.number + COUNTER_DECREMENT_VALUE }),
-      () => this.props.onUpdate(COUNTER_INCREMENT_VALUE)
-    );
+    this.setState((prevState) => ({
+      number: prevState.number + COUNTER_DECREMENT_VALUE,
+    }));
+    this.props.increaseSum();
   }
 
   onDecrease() {
-    this.setState(
-      (prevState) => ({ number: prevState.number + COUNTER_DECREMENT_VALUE }),
-      () => this.props.onUpdate(COUNTER_DECREMENT_VALUE)
-    );
+    this.setState((prevState) => ({
+      number: prevState.number + COUNTER_DECREMENT_VALUE,
+    }));
+    this.props.decreaseSum();
   }
 
   render() {
